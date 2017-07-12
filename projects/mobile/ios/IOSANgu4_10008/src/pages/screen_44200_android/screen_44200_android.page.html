@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-navbar color="navbar-header">
+        <button ion-button menuToggle icon-only>
+            <ion-icon name="menu" color="primary">
+            </ion-icon>
+        </button>
+        <ion-title>
+            Screen_44200_android
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+<ion-grid>
+<ion-row style="padding-top: 102px">
+<ion-col col-8 offset-2>
+<ion-item>
+<ion-input placeholder=Input [(ngModel)]='MobileAnd.name'></ion-input>
+</ion-item>
+
+</ion-col>
+</ion-row>
+<ion-row style="padding-top: 63px">
+<ion-col col-2 offset-4>
+<button ion-button (click)="createMobileAnd()">
+save</button>
+
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-content>

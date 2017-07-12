@@ -1,0 +1,21 @@
+version: '2'
+services:
+  db:
+    container_name: IOSANgu4-10008-db
+    build: db
+    image: iosangu4-10008/db
+    ports:
+      - "32657:3306"
+  web:
+    depends_on:
+      - db
+
+    container_name: IOSANgu4-10008-web
+    build: desktop
+    image: iosangu4-10008/web
+    links:
+      - db:mydb
+
+    ports:
+      - "9090:8080"
+    entrypoint: ./wait-for-it.sh -t 180 --strict mydb:3306 -- java -jar IOSANgu4_10008.jar
