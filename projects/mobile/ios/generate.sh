@@ -5,21 +5,21 @@ cd  IOSANgu4_10008
 
 /bin/sh -c "sleep 10 ; echo IOS_Platform_Removed"
 
-echo 3NCQCqv4 | sudo -S ionic state reset
+echo $1 | sudo -S ionic state reset
 
 /bin/sh -c "sleep 10 ; echo installing NPM "
 
-echo 3NCQCqv4 | sudo  npm install
+echo $1 | sudo  npm install
 
 /bin/sh -c "sleep 10 ; echo Building Ionic"
 
-echo 3NCQCqv4 | sudo ionic build
+echo $1 | sudo ionic build
 
 /bin/sh -c "sleep 10 ; echo Permission_to_be_Changed"
 
 cd platforms
 
-echo 3NCQCqv4 | sudo -S chmod -R 777 ios
+echo $1 | sudo -S chmod -R 777 ios
 
 /bin/sh -c "sleep 10 ; echo Permission_changed"
 
@@ -41,11 +41,11 @@ open  IOSANgu4_10008.xcodeproj
 
 pwd
 
-echo 3NCQCqv4 | sudo -S chmod -R 777 ~/Desktop/IOSANgu4_10008/IOSANgu4_10008/projects/mobile/ios/IOSANgu4_10008
+echo $1 | sudo -S chmod -R 777 ~/Desktop/IOSANgu4_10008/IOSANgu4_10008/projects/mobile/ios/IOSANgu4_10008
 
 /bin/sh -c "sleep 10 ; echo IOSANgu4_10008_Access_Granted"
 
-security -v unlock-keychain -p "3NCQCqv4" "login.keychain"
+security -v unlock-keychain -p "$1" "login.keychain"
 
 xcodebuild clean -project IOSANgu4_10008.xcodeproj -configuration Release -alltargets
 
@@ -53,15 +53,15 @@ xcodebuild archive -project IOSANgu4_10008.xcodeproj -scheme IOSANgu4_10008 -des
 
 xcodebuild -exportArchive -archivePath "build/"IOSANgu4_10008.xcarchive -exportPath "build/"IOSANgu4_10008 -exportFormat ipa -exportProvisioningProfile "XC Ad Hoc: *"
 
-pwd
+# pwd
 
-/bin/sh -c "sleep 10 ; echo IPA_Generated_Using_Xcode"
+# /bin/sh -c "sleep 10 ; echo IPA_Generated_Using_Xcode"
 
-cd ~/Desktop/IOSANgu4_10008/projects/mobile/ios/IOSANgu4_10008/platforms/ios/build
+# cd ~/Desktop/IOSANgu4_10008/projects/mobile/ios/IOSANgu4_10008/platforms/ios/build
 
-curl -H "X-InstallrAppToken:ODVP3Rjlz3GQe33wMbPNWL1DAuFJ6pi4"  https://www.installrapp.com/apps.json -F qqfile=@IOSANgu4_10008.ipa --verbose >IpaUploadSucess.json
+# curl -H "X-InstallrAppToken:ODVP3Rjlz3GQe33wMbPNWL1DAuFJ6pi4"  https://www.installrapp.com/apps.json -F qqfile=@IOSANgu4_10008.ipa --verbose >IpaUploadSucess.json
 
-cd ~/Desktop/IOSANgu4_10008/
+# cd ~/Desktop/IOSANgu4_10008/
 
 #cp -R ~/AutoProvision.jar ~/Desktop/IOSANgu4_10008/
 
@@ -78,21 +78,21 @@ cd  IOSANgu4_10008
 
 /bin/sh -c "sleep 10 ; echo IOS_Platform_Removed"
 
-echo 3NCQCqv4 | sudo -S ionic state reset
+echo $1 | sudo -S ionic state reset
 
 /bin/sh -c "sleep 10 ; echo installing NPM "
 
-echo 3NCQCqv4 | sudo  npm install
+echo $1 | sudo  npm install
 
 /bin/sh -c "sleep 10 ; echo Building Ionic"
 
-echo 3NCQCqv4 | sudo ionic build
+echo $1 | sudo ionic build
 
 /bin/sh -c "sleep 10 ; echo Permission_to_be_Changed"
 
 cd platforms
 
-echo 3NCQCqv4 | sudo -S chmod -R 777 ios
+echo $1 | sudo -S chmod -R 777 ios
 
 /bin/sh -c "sleep 10 ; echo Permission_changed"
 
@@ -114,11 +114,11 @@ open  IOSANgu4_10008.xcodeproj
 
 pwd
 
-echo 3NCQCqv4 | sudo -S chmod -R 777 ~/Desktop/IOSANgu4_10008/projects/Tablet/ios/IOSANgu4_10008
+echo $1 | sudo -S chmod -R 777 ~/Desktop/IOSANgu4_10008/projects/Tablet/ios/IOSANgu4_10008
 
 /bin/sh -c "sleep 10 ; echo IOSANgu4_10008_Access_Granted"
 
-security -v unlock-keychain -p "3NCQCqv4" "login.keychain"
+security -v unlock-keychain -p "$1" "login.keychain"
 
 xcodebuild clean -project IOSANgu4_10008.xcodeproj -configuration Release -alltargets
 
@@ -126,15 +126,15 @@ xcodebuild archive -project IOSANgu4_10008.xcodeproj -scheme IOSANgu4_10008 -des
 
 xcodebuild -exportArchive -archivePath "build/"IOSANgu4_10008.xcarchive -exportPath "build/"IOSANgu4_10008 -exportFormat ipa -exportProvisioningProfile "XC Ad Hoc: *"
 
-pwd
+# pwd
 
-/bin/sh -c "sleep 10 ; echo IPA_Generated_Using_Xcode"
+# /bin/sh -c "sleep 10 ; echo IPA_Generated_Using_Xcode"
 
-cd ~/Desktop/IOSANgu4_10008/projects/Tablet/ios/IOSANgu4_10008/platforms/ios/build
+# cd ~/Desktop/IOSANgu4_10008/projects/Tablet/ios/IOSANgu4_10008/platforms/ios/build
 
-curl -H "X-InstallrAppToken:ODVP3Rjlz3GQe33wMbPNWL1DAuFJ6pi4"  https://www.installrapp.com/apps.json -F qqfile=@IOSANgu4_10008.ipa --verbose >IpaUploadSucess.json
+# curl -H "X-InstallrAppToken:ODVP3Rjlz3GQe33wMbPNWL1DAuFJ6pi4"  https://www.installrapp.com/apps.json -F qqfile=@IOSANgu4_10008.ipa --verbose >IpaUploadSucess.json
 
-cd ~/Desktop/IOSANgu4_10008/
+# cd ~/Desktop/IOSANgu4_10008/
 
 #cp -R ~/AutoProvision.jar ~/Desktop/IOSANgu4_10008/
 

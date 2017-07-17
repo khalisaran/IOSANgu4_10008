@@ -44,6 +44,7 @@ project.ext {
   configJsonFile = configJson
   configJsonLoc = configJsonLocation
 
+
   appid= ''
   latestId=''
   appToken=''
@@ -84,7 +85,7 @@ println 'Existing IPA file deleted..!!!'
 //************To build IPA *************//
 task buildIPAFile(dependsOn:'deleteExistingIPA') << {
   exec {
-   commandLine 'bash', 'generate.sh', 'executeXcodeIpaBuild'
+   commandLine 'bash', 'start_execution.sh', 'executeXcodeIpaBuild'+' '+projMacPassword
   }
   println 'IPA File Generated..!'
 }
@@ -92,25 +93,36 @@ task buildIPAFile(dependsOn:'deleteExistingIPA') << {
 //***********Upload IPA into Installr***********//
 task shareTheApp(dependsOn: 'buildIPAFile') << {
   exec{
-    commandLine 'echo','------------------------------------'
+    commandLine 'sh','-c','killall  Xcode'
   }
-  //upload()
 }
 
-task getAppId(dependsOn:'shareTheApp')<< {
-  def json = new JsonSlurper().parse(file (ipaUploadSucessJsonFile),"UTF-8")
-  appid=json.appData.latestBuild.id
-  latestId=json.appData.id
-  appToken=json.appData.latestBuild.buildFile.url
-  println "--------------latestBuild----------- \n" +json.appData.latestBuild.id +"----"+latestId
-  println '----------------installr Url--------- \n'+json.appData.latestBuild.buildFile.url
+task deployIPA (dependsOn:'shareTheApp') << {
+  println 'IPA GENERATION Completed..!'
 }
-task deployIPA (dependsOn:'getAppId') << {
-  String v=  'sh sendInvites.sh sendInvitesTotesters '+latestId+' '+appid+' '+projEmailReceiver
-  println v
-  runCmd(v)
-  println 'Testers invited for IOS application'
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Tablet
 task deleteExistingTabletIPA() << {
@@ -123,7 +135,7 @@ println 'Existing Tablet IPA file deleted..!!!'
 //************To build IPA *************//
 task buildTabletIPAFile(dependsOn:'deleteExistingTabletIPA') << {
   exec {
-   commandLine 'bash', 'generate.sh', 'executeXcodeIpaBuildTablet'
+   commandLine 'bash', 'start_execution.sh', 'executeXcodeIpaBuildTablet'+' '+projMacPassword
   }
   println ' Tablet IPA File Generated..!'
 }
@@ -131,35 +143,12 @@ task buildTabletIPAFile(dependsOn:'deleteExistingTabletIPA') << {
 //***********Upload IPA into Installr***********//
 task shareTheTabletApp(dependsOn: 'buildTabletIPAFile') << {
   exec{
-    commandLine 'echo','------------------------------------'
+    commandLine 'bash','killall Xcode'
   }
-  //upload()
 }
-
-task getTabletAppId(dependsOn:'shareTheTabletApp')<< {
-  def json = new JsonSlurper().parse(file (getTabletappIdFile),"UTF-8")
-  appid=json.appData.latestBuild.id
-  latestId=json.appData.id
-  appToken=json.appData.latestBuild.buildFile.url
-  println "--------------latestBuild---Tablet-------- \n" +json.appData.latestBuild.id +"----"+latestId
-  println '----------------installr Url--- Tablet------ \n'+json.appData.latestBuild.buildFile.url
+task deploytabletIPA (dependsOn:'shareTheTabletApp') << {
+    println 'IPA GENERATION Completed..!'
 }
-task deploytabletIPA (dependsOn:'getTabletAppId') << {
-  String v=  'sh sendInvites.sh sendInvitesTotesters '+latestId+' '+appid+' '+projEmailReceiver
-  println v
-  runCmd(v)
-  println 'Testers invited for Tablet IOS application'
-}
-
-def buildIPA() {
-  println 'gonna build IPA'
-  runCmd('bash  start_execution.sh  executeXcodeIpaBuild')
-}
-def upload() {
-  println 'Uploading IPA...'
-  runCmd('bash start_execution.sh UploadIPAfile')
-}
-
 // Executing the Commands
 def runCmd(command) {
   def process = command.execute()
