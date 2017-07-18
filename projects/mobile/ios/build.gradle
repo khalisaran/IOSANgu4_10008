@@ -87,7 +87,7 @@ println 'Existing IPA file deleted..!!!'
 //************To build IPA *************//
 task buildIPAFile(dependsOn:'deleteExistingIPA') << {
   exec {
-   commandLine 'bash', 'start_execution.sh', 'executeXcodeIpaBuild'+' '+projMacPassword
+   commandLine 'bash', 'generate.sh', 'executeXcodeIpaBuild'+' '+projMacPassword
   }
   println 'IPA File Generated..!'
 }
@@ -137,7 +137,7 @@ println 'Existing Tablet IPA file deleted..!!!'
 //************To build IPA *************//
 task buildTabletIPAFile(dependsOn:'deleteExistingTabletIPA') << {
   exec {
-   commandLine 'bash', 'start_execution.sh', 'executeXcodeIpaBuildTablet'+' '+projMacPassword
+   commandLine 'bash', 'generate.sh', 'executeXcodeIpaBuildTablet'+' '+projMacPassword
   }
   println ' Tablet IPA File Generated..!'
 }
