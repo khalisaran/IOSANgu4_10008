@@ -2,7 +2,7 @@
 import org.gradle.api.tasks.Exec
 import org.apache.tools.ant.taskdefs.condition.Os
 import java.io.*
-import groovy.json.*
+//import groovy.json.*
 
 // ***** Build Script Dependencies Section ***** //
 buildscript {
@@ -14,7 +14,7 @@ buildscript {
   }
 }
 
-apply plugin: 'groovy'
+//apply plugin: 'groovy'
 apply plugin :'java'
 //apply plugin: 'org.hidetake.ssh'
 
@@ -60,19 +60,21 @@ project.ext {
 
 
 dependencies {
-  antClasspath 'ant:ant-javamail:1.6.5', 'javax.activation:activation:1.1.1', 'javax.mail:mail:1.5.0-b01'
+ // antClasspath 'ant:ant-javamail:1.6.5', 'javax.activation:activation:1.1.1', 'javax.mail:mail:1.5.0-b01'
 }
 
-
+/*
 URLClassLoader loader = GroovyObject.class.classLoader
 configurations.driver.each { File file ->
   loader.addURL(file.toURL())
 }
+*/
 
 ClassLoader antClassLoader = org.apache.tools.ant.Project.class.classLoader
 configurations.antClasspath.each { File jar ->
   antClassLoader.addURL( jar.toURI().toURL() )
 }
+
 
 //mobile
 task deleteExistingIPA() << {
