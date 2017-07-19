@@ -5,21 +5,21 @@ cd  IOSANgu4_10008
 
 /bin/sh -c "sleep 10 ; echo IOS_Platform_Removed"
 
-echo $1 | sudo -S ionic state reset
+ionic state reset
 
 /bin/sh -c "sleep 10 ; echo installing NPM "
 
-echo $1 | sudo  npm install
+npm install
 
 /bin/sh -c "sleep 10 ; echo Building Ionic"
 
-echo $1 | sudo ionic build
+ionic build
 
 /bin/sh -c "sleep 10 ; echo Permission_to_be_Changed"
 
 cd platforms
 
-echo $1 | sudo -S chmod -R 777 ios
+chmod -R 777 ios
 
 /bin/sh -c "sleep 10 ; echo Permission_changed"
 
@@ -41,7 +41,7 @@ open  IOSANgu4_10008.xcodeproj
 
 pwd
 
-echo $1 | sudo -S chmod -R 777 ~/Desktop/IOSANgu4_10008/IOSANgu4_10008/projects/mobile/ios/IOSANgu4_10008
+chmod -R 777 ~/Desktop/IOSANgu4_10008/IOSANgu4_10008/projects/mobile/ios/IOSANgu4_10008
 
 /bin/sh -c "sleep 10 ; echo IOSANgu4_10008_Access_Granted"
 
@@ -78,21 +78,21 @@ cd  IOSANgu4_10008
 
 /bin/sh -c "sleep 10 ; echo IOS_Platform_Removed"
 
-echo $1 | sudo -S ionic state reset
+ionic state reset
 
 /bin/sh -c "sleep 10 ; echo installing NPM "
 
-echo $1 | sudo  npm install
+npm install
 
 /bin/sh -c "sleep 10 ; echo Building Ionic"
 
-echo $1 | sudo ionic build
+ionic build
 
 /bin/sh -c "sleep 10 ; echo Permission_to_be_Changed"
 
 cd platforms
 
-echo $1 | sudo -S chmod -R 777 ios
+chmod -R 777 ios
 
 /bin/sh -c "sleep 10 ; echo Permission_changed"
 
@@ -114,7 +114,7 @@ open  IOSANgu4_10008.xcodeproj
 
 pwd
 
-echo $1 | sudo -S chmod -R 777 ~/Desktop/IOSANgu4_10008/projects/Tablet/ios/IOSANgu4_10008
+chmod -R 777 ~/Desktop/IOSANgu4_10008/projects/Tablet/ios/IOSANgu4_10008
 
 /bin/sh -c "sleep 10 ; echo IOSANgu4_10008_Access_Granted"
 
