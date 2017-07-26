@@ -49,23 +49,13 @@ security -v unlock-keychain -p "$1" "login.keychain"
 
 xcodebuild clean -project IOSANgu4_10008.xcodeproj -configuration Release -alltargets
 
-xcodebuild archive -project IOSANgu4_10008.xcodeproj -scheme IOSANgu4_10008 -destination generic/platform=iOS  -archivePath "build/"IOSANgu4_10008.xcarchive
+#xcodebuild archive -project IOSANgu4_10008.xcodeproj -scheme IOSANgu4_10008 -destination generic/platform=iOS  -archivePath "build/"IOSANgu4_10008.xcarchive
 
-xcodebuild -exportArchive -archivePath "build/"IOSANgu4_10008.xcarchive -exportPath "build/"IOSANgu4_10008 -exportFormat ipa -exportProvisioningProfile "XC Ad Hoc: *"
+#xcodebuild -exportArchive -archivePath "build/"IOSANgu4_10008.xcarchive -exportPath "build/"IOSANgu4_10008 -exportFormat ipa -exportProvisioningProfile "XC Ad Hoc: *"
 
-# pwd
+xcodebuild archive -project IOSANgu4_10008.xcodeproj -scheme IOSANgu4_10008  -configuration Release  -destination generic/platform=iOS  -archivePath "build/"IOSANgu4_10008.xcarchive
 
-# /bin/sh -c "sleep 10 ; echo IPA_Generated_Using_Xcode"
-
-# cd ~/Desktop/IOSANgu4_10008/projects/mobile/ios/IOSANgu4_10008/platforms/ios/build
-
-# curl -H "X-InstallrAppToken:ODVP3Rjlz3GQe33wMbPNWL1DAuFJ6pi4"  https://www.installrapp.com/apps.json -F qqfile=@IOSANgu4_10008.ipa --verbose >IpaUploadSucess.json
-
-# cd ~/Desktop/IOSANgu4_10008/
-
-#cp -R ~/AutoProvision.jar ~/Desktop/IOSANgu4_10008/
-
-#java -jar AutoProvision.jar
+xcodebuild -exportArchive -archivePath "build/"IOSANgu4_10008.xcarchive -exportPath "build/"IOSANgu4_10008 -exportFormat ipa  CODE_SIGN_IDENTITY="iphone Distribution: PricewaterhouseCoopers LLP"  -exportProvisioningProfile "PwC_Internal_Apps_Distribution_Profile_2017"
 
 exit 0
 }
@@ -126,19 +116,7 @@ xcodebuild archive -project IOSANgu4_10008.xcodeproj -scheme IOSANgu4_10008 -des
 
 xcodebuild -exportArchive -archivePath "build/"IOSANgu4_10008.xcarchive -exportPath "build/"IOSANgu4_10008 -exportFormat ipa -exportProvisioningProfile "XC Ad Hoc: *"
 
-# pwd
 
-# /bin/sh -c "sleep 10 ; echo IPA_Generated_Using_Xcode"
-
-# cd ~/Desktop/IOSANgu4_10008/projects/Tablet/ios/IOSANgu4_10008/platforms/ios/build
-
-# curl -H "X-InstallrAppToken:ODVP3Rjlz3GQe33wMbPNWL1DAuFJ6pi4"  https://www.installrapp.com/apps.json -F qqfile=@IOSANgu4_10008.ipa --verbose >IpaUploadSucess.json
-
-# cd ~/Desktop/IOSANgu4_10008/
-
-#cp -R ~/AutoProvision.jar ~/Desktop/IOSANgu4_10008/
-
-#java -jar AutoProvision.jar
 
 exit 0
 }
