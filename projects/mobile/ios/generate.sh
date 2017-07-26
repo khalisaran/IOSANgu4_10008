@@ -47,6 +47,8 @@ chmod -R 777 ~/Desktop/IOSANgu4_10008/IOSANgu4_10008/projects/mobile/ios/IOSANgu
 
 security -v unlock-keychain -p "$1" "login.keychain"
 
+sed -i '' 's/ProvisioningStyle = Automatic;/ProvisioningStyle = Manual;/' IOSANgu4_10008.xcodeproj/project.pbxproj
+
 xcodebuild clean -project IOSANgu4_10008.xcodeproj -configuration Release -alltargets
 
 #xcodebuild archive -project IOSANgu4_10008.xcodeproj -scheme IOSANgu4_10008 -destination generic/platform=iOS  -archivePath "build/"IOSANgu4_10008.xcarchive
