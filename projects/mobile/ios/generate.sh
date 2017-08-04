@@ -55,7 +55,7 @@ xcodebuild clean -project IOSANgu4_10008.xcodeproj -configuration Release -allta
 
 #xcodebuild -exportArchive -archivePath "build/"IOSANgu4_10008.xcarchive -exportPath "build/"IOSANgu4_10008 -exportFormat ipa -exportProvisioningProfile "XC Ad Hoc: *"
 
-xcodebuild archive -project IOSANgu4_10008.xcodeproj -scheme IOSANgu4_10008  -configuration Release  DEVELOPMENT_TEAM="PricewaterhouseCoopers LLP"  CODE_SIGN_IDENTITY="iphone Distribution: PricewaterhouseCoopers LLP" -destination generic/platform=iOS  -archivePath "build/"IOSANgu4_10008.xcarchive
+xcodebuild archive -xcconfig configuration.xcconfig -project IOSANgu4_10008.xcodeproj -scheme IOSANgu4_10008  -configuration Release  DEVELOPMENT_TEAM="PricewaterhouseCoopers LLP"  CODE_SIGN_IDENTITY="iphone Distribution: PricewaterhouseCoopers LLP" -destination generic/platform=iOS  -archivePath "build/"IOSANgu4_10008.xcarchive
 
 xcodebuild -exportArchive -archivePath "build/"IOSANgu4_10008.xcarchive -exportPath "build/"IOSANgu4_10008 -exportFormat ipa -exportProvisioningProfile "PwC Internal Apps Distribution Profile 2017"
 
