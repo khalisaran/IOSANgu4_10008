@@ -1,7 +1,7 @@
 {
     "ios": {
        "release": {
-            "codeSignIdentity": "iPhone Distribution",
+            "codeSignIdentity": "iPhone Developer",
             "developmentTeam": "4SGB5GTW2X",
             "packageType": "ad-hoc",
             "buildFlag": [
