@@ -1,8 +1,8 @@
 {
     "ios": {
        "release": {
-            "codeSignIdentity": "iPhone Developer",
-            "developmentTeam": "4SGB5GTW2X",
+            "codeSignIdentity": "iPhone Distribution",
+            "developmentTeam": "PricewaterhouseCoopers LLP",
             "packageType": "ad-hoc",
             "buildFlag": [
                 "EMBEDDED_CONTENT_CONTAINS_SWIFT = NO",
