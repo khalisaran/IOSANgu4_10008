@@ -1,9 +1,21 @@
 {
     "ios": {
+        "debug": {
+            "codeSignIdentity": "iPhone Distribution",
+            "developmentTeam": "PricewaterhouseCoopers LLP",
+            "provisioningProfile": "9da92174-aad9-4f72-9ef3-7645d6f9f98a",
+            "packageType": "enterprise",
+            "buildFlag": [
+                "EMBEDDED_CONTENT_CONTAINS_SWIFT = NO",
+                "ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES=NO",
+                "LD_RUNPATH_SEARCH_PATHS = \"@executable_path/Frameworks\""
+            ]
+        },
        "release": {
-            "codeSignIdentity": "iPhone Developer",
-            "developmentTeam": "4SGB5GTW2X",
-            "packageType": "ad-hoc",
+            "codeSignIdentity": "iPhone Distribution",
+            "developmentTeam": "PricewaterhouseCoopers LLP",
+           "provisioningProfile": "9da92174-aad9-4f72-9ef3-7645d6f9f98a",
+            "packageType": "enterprise",
             "buildFlag": [
                 "EMBEDDED_CONTENT_CONTAINS_SWIFT = NO",
                 "ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES=NO",
