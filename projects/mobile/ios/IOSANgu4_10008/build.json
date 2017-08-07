@@ -2,7 +2,7 @@
     "ios": {
        "release": {
             "codeSignIdentity": "iPhone Distribution",
-            "developmentTeam": "PricewaterhouseCoopers LLP",
+            "developmentTeam": "4SGB5GTW2X",
             "packageType": "ad-hoc",
             "buildFlag": [
                 "EMBEDDED_CONTENT_CONTAINS_SWIFT = NO",
