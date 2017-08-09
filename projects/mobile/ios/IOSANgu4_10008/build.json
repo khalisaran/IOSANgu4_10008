@@ -2,7 +2,7 @@
     "ios": {
         "debug": {
             "codeSignIdentity": "iPhone Distribution",
-            "developmentTeam": "PricewaterhouseCoopers LLP",
+            "developmentTeam": "299VAT3WU6",
             "provisioningProfile": "9da92174-aad9-4f72-9ef3-7645d6f9f98a",
             "packageType": "enterprise",
             "buildFlag": [
@@ -13,7 +13,7 @@
         },
        "release": {
             "codeSignIdentity": "iPhone Distribution",
-            "developmentTeam": "PricewaterhouseCoopers LLP",
+            "developmentTeam": "299VAT3WU6",
            "provisioningProfile": "9da92174-aad9-4f72-9ef3-7645d6f9f98a",
             "packageType": "enterprise",
             "buildFlag": [
